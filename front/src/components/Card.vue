@@ -1,10 +1,10 @@
 <template>
   <div 
-    class="flex flex-col items-center gap-5 w-44 h-96 overflow-hidden border-4 rounded-xl cursor-pointer"
+    class="flex flex-col items-center gap-5 w-64 overflow-hidden border-4 rounded-xl cursor-pointer"
     @click="cardDetails(product.id)"
   >
     <div class="rounded h-44 overflow-hidden">
-      <img :src="product.images[0]" :alt="product.title">
+      <img :src="product.images[0]" :alt="product.title" class="w-full h-full">
     </div>
     <div class="w-40 truncate">{{ product.title }}</div>
     <div class="h-18 text-xs m-2 text-gray-600 overflow-hidden">{{ product.description }}</div>
