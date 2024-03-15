@@ -6,7 +6,7 @@ import Header from './components/Header.vue'
 <template>
   <layout>
     <Header></Header>
-    <div class="h-[calc(100vh-80px)]  overflow-scroll">
+    <div class="h-[calc(100vh-90px)]  overflow-scroll">
       <router-view></router-view>
     </div>
   </layout>
