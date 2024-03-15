@@ -1,5 +1,5 @@
 <template>
-    <div class="text-2xl flex flex-wrap gap-2 justify-around h-[calc(100vh-80px)]  overflow-scroll">
+    <div class="text-2xl flex flex-wrap gap-2 justify-around">
         <Card v-for="product in data?.products" :key="product.id" :product="product"/>
     </div>
 </template>
