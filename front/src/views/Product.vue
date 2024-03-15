@@ -15,7 +15,7 @@
 
         <div class="py-10 flex flex-col gap-4">
             <Button>Buy now</Button>
-            <Button>Add to basket</Button>
+            <Button @click="BasketStore.addToBasket(product)">Add to basket</Button>
         </div>
     </div>
 </template>
@@ -26,10 +26,12 @@ import Button from '../components/Button.vue'
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
+import { useBasketStore } from '../stores/BasketStore'
 
 const route = useRoute()
 const id = ref(null)
 const product = ref()
+const BasketStore = useBasketStore()
 
 const titles = ['title', 'brand', 'description']
 
