@@ -1,8 +1,11 @@
 <script setup>
-import Card from './components/Card.vue'
+import Layout from './components/Layout.vue'
+import Header from './components/Header.vue'
 </script>
 
 <template>
-  dasda
-  <Card />
+  <layout>
+    <Header></Header>
+    <router-view></router-view>
+  </layout>
 </template>
