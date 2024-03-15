@@ -2,8 +2,8 @@
     <div class="flex flex-col gap items-start">
         <div class="mt-4 flex gap-4 items-center">
             <Button 
-                @click="basketStore.sums[index] > 0 && sum('-')" 
-                :class="basketStore.sums[index] == 0 && 'bg-blue-400 hover:bg-blue-400 cursor-not-allowed'"
+                @click="basketStore.sums[index] > 1 && sum('-')" 
+                :class="basketStore.sums[index] == 1 && 'bg-blue-400 hover:bg-blue-400 cursor-not-allowed'"
             >
                 -
             </Button>
