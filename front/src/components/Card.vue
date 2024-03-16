@@ -3,7 +3,7 @@
     class="flex flex-col items-center gap-5 border-4 rounded-xl cursor-pointer"
     @click="cardDetails(product.id)"
   >
-    <div class="rounded h-44 overflow-hidden w-52">
+    <div class="rounded h-44 overflow-hidden">
       <img :src="product.images[0]" :alt="product.title" class="w-full h-full">
     </div>
     <div class="bg-gray-100 flex justify-between w-full p-2">

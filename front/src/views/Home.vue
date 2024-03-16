@@ -33,7 +33,7 @@ const data = ref(null)
 const route = useRoute()
 const router = useRouter()
 
-const limit = ref(4)
+const limit = ref(10)
 
 const getParam = computed(() => {
     return Number(route.params?.pagination?.split('=')[1])
