@@ -6,8 +6,11 @@
     <div class="rounded h-44 overflow-hidden">
       <img :src="product.images[0]" :alt="product.title" class="w-full h-full">
     </div>
-    <div class="w-40 truncate">{{ product.title }}</div>
-    <div class="h-12 text-xs m-2 text-gray-600 text-ellipsis">{{ product.description }}</div>
+    <div class="bg-gray-100 flex justify-between w-full p-2">
+      <div class="max-w-40 truncate">{{ product.title }}</div>
+      <div>{{ product.price }}$</div>
+    </div>
+    <div class="h-12 text-xs m-2 text-gray-600 overflow-hidden">{{ product.description }}</div>
 
     <div v-if="productAmount" @click.stop>
       <ProductAmount :product="product" />

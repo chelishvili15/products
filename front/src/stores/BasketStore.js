@@ -4,7 +4,7 @@ export const useBasketStore = defineStore('BasketStore', {
     state: () => {
         return {
             basket: [],
-            sums: []
+            sums: [],
         }
     },
     actions: {
@@ -19,6 +19,11 @@ export const useBasketStore = defineStore('BasketStore', {
         removeFromBasket(index) {
             this.basket.splice(index, 1)
             this.sums.splice(index, 1)
+        }
+    },
+    getters: {
+        getSumPrice: (state) => {
+            return (state.basket.map(val => val.price).map((val, idx) => val * state.sums[idx])).reduce((a, b) => a + b)
         }
     }
 })

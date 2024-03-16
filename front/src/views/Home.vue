@@ -1,5 +1,5 @@
 <template>
-    <div class="text-2xl flex flex-wrap gap-2 justify-around">
+    <div class="flex flex-wrap gap-2 justify-around">
         <Card 
             v-for="product in data?.products" 
             :key="product.id" 

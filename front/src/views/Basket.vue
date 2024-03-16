@@ -1,5 +1,5 @@
 <template>
-    <div v-if="basketStore.basket.length" class="text-2xl flex flex-wrap gap-2 justify-start">
+    <div v-if="basketStore.basket.length" class="flex flex-wrap gap-2 justify-start">
         <Card 
             v-for="(product, index) in basketStore.basket" 
             :key="product.id"

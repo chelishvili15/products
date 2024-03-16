@@ -10,14 +10,22 @@
             </div>
             <div class="w-3/5">{{ product.title }}</div>
             <div class="w-1/5">{{ basketStore.sums[index] }}</div>
-            <div></div>
-
+            <div class="w-1/5">{{ product.price * basketStore.sums[index]}}$</div>
         </div>
+        <div class="flex w-full">
+            <div class="w-1/5"></div>
+            <div class="w-1/5"></div>
+            <div class="w-3/5"></div>
+            <div class="w-1/5 text-xl font-semibold border-t-2 pt-3">{{ basketStore.getSumPrice }}$</div>
+        </div>
+
+        <Button class="fixed bottom-10 right-1/2 translate-x-1/2">Buy now</Button>
     </div>
 </template>
 
 <script setup>
 import { useBasketStore } from '../stores/BasketStore.js'
+import Button from '../components/Button.vue';
 
 const basketStore = useBasketStore()
 </script>
