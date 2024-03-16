@@ -6,7 +6,7 @@
 
             <div class="text-gray-800 mt-10 flex flex-col gap-2">
                 <div v-for="title in titles" :key="title" class="flex items-start gap-3">
-                    <p class="text-lg font-semibold ">{{ title }}: </p>
+                    <p class="text-lg font-semibold ">{{ firstLetterToUppercase(title) }}: </p>
                     <p>{{ product && product[title] }}</p>
                 </div>
             </div>
@@ -23,7 +23,7 @@
 <script setup>
 import Carousel from '../components/Carousel.vue'
 import Button from '../components/Button.vue'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
 import { useBasketStore } from '../stores/BasketStore'
@@ -34,6 +34,10 @@ const product = ref()
 const BasketStore = useBasketStore()
 
 const titles = ['title', 'brand', 'description']
+
+const firstLetterToUppercase = (str) => {
+    return str[0].toUpperCase() + str.slice(1)
+}
 
 onMounted(() => {
     id.value = Number(route.params.id)
