@@ -36,7 +36,7 @@ const BasketStore = useBasketStore()
 const titles = ['title', 'brand', 'description']
 
 onMounted(() => {
-    id.value = route.params.path[0]
+    id.value = Number(route.params.id)
 
     axios.get(`https://dummyjson.com/products/${id.value}`)
         .then((res) => product.value = res.data)

@@ -1,5 +1,5 @@
 <template>
-    <div class="text-lg w-2/3 m-auto">
+    <div v-if="basketStore.basket.length" class="text-lg w-2/3 m-auto">
         <div 
             v-for="(product, index) in basketStore.basket"
             :key="product.id"

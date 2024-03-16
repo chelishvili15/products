@@ -1,6 +1,8 @@
 <script setup>
+import { onMounted, onBeforeMount } from 'vue'
 import Layout from './components/Layout.vue'
 import Header from './components/Header.vue'
+import { useRouter, useRoute } from 'vue-router'
 </script>
 
 <template>
