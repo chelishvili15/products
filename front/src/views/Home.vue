@@ -22,7 +22,7 @@
 
 <script setup>
 import axios from 'axios'
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import Card from '../components/Card.vue'
@@ -33,15 +33,13 @@ const data = ref(null)
 const route = useRoute()
 const router = useRouter()
 
-const limit = ref(10)
+const limit = ref(4)
 
 const getParam = computed(() => {
     return Number(route.params?.pagination?.split('=')[1])
 })
 
-
 const getData = (limit, skip) => {
-    
     axios.get(`https://dummyjson.com/products?limit=${limit}&&skip=${skip}`)
         .then((res) => {
             data.value = res.data
@@ -50,19 +48,24 @@ const getData = (limit, skip) => {
 
 onMounted(() => {
     let param = getParam.value
-    console.log('mounted')
     getData(limit.value, (param - 1) * limit.value)
+})
+
+watch(getParam, (newParam, _) => {
+    getData(limit.value, (newParam - 1) * limit.value)
 })
 
 const pag = (mark) => {
     let param = getParam.value
-    if (mark === '+') {
-        getData(limit.value, (param) * limit.value)
+    
+    router.push(`/page=${eval(`${param}${mark}1`)}`)
+    
+    /* this is equal to this */
+    /* if (mark === '+') {
         router.push(`/page=${+param + 1}`)
     } else {
-        getData(limit.value, (param - 2) * limit.value)
         router.push(`/page=${+param - 1}`)
-    }
+    } */
 }
 
 

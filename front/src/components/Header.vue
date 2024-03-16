@@ -1,6 +1,6 @@
 <template>
     <div class="flex gap-6 justify-end items-center pr-10 text-xl text-gray-80 h-20 text-gray-600 shadow-lg mb-2">
-        <router-link to="/page=1">Home</router-link>
+        <router-link to="/">Home</router-link>
         <router-link to="/basket">
             <div class="relative">
                 <RedMark 
