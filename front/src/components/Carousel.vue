@@ -1,10 +1,10 @@
 <template>
-    <Carousel :items-to-show="1.5" :wrap-around="true" slideWidth="1">
+   <Carousel :items-to-show="1.5" :wrap-around="true" slideWidth="1">
         <Slide v-for="slide in images" :key="slide">
-            <div class="carousel__item">
-                <img :src="slide" alt="product.title">
-                    </div>
-                </Slide>
+            <div class="carousel__item h-64 overflow-hidden">
+                <img :src="slide" alt="product.title" class="w-ful h-full">
+            </div>
+        </Slide>
 
         <template #addons>
             <Pagination />
