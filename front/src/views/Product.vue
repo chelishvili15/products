@@ -15,7 +15,19 @@
 
         <div class="py-10 flex flex-col gap-4">
             <Button>Buy now</Button>
-            <Button @click="BasketStore.addToBasket(product)">Add to basket</Button>
+            <Button 
+                v-if="basketStore.checkToBasket(product?.id)" 
+                @click="basketStore.addToBasket(product)"
+            >
+                    Add to basket
+            </Button>
+            <div 
+                v-else 
+                class="text-red-600 hover:text-red-700 p-1 underline" 
+                @click="basketStore.removeFromBasket"
+            >
+                Remove from basket
+        </div>
         </div>
     </div>
 </template>
@@ -31,7 +43,7 @@ import { useBasketStore } from '../stores/BasketStore'
 const route = useRoute()
 const id = ref(null)
 const product = ref()
-const BasketStore = useBasketStore()
+const basketStore = useBasketStore()
 
 const titles = ['title', 'brand', 'description']
 

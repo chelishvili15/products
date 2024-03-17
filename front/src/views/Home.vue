@@ -58,14 +58,7 @@ watch(getParam, (newParam, _) => {
 const pag = (mark) => {
     let param = getParam.value
     
-    router.push(`/page=${eval(`${param}${mark}1`)}`)
-    
-    /* this is equal to this */
-    /* if (mark === '+') {
-        router.push(`/page=${+param + 1}`)
-    } else {
-        router.push(`/page=${+param - 1}`)
-    } */
+    router.push(`/page=${eval(`${param}${mark}1`)}`)    
 }
 
 
