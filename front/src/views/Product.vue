@@ -23,8 +23,8 @@
             </Button>
             <div 
                 v-else 
-                class="text-red-600 hover:text-red-700 p-1 underline" 
-                @click="basketStore.removeFromBasket"
+                class="text-red-600 hover:text-red-700 p-1 underline cursor-pointer" 
+                @click="basketStore.removeFromBasket(index)"
             >
                 Remove from basket
         </div>
@@ -56,5 +56,9 @@ onMounted(() => {
 
     axios.get(`https://dummyjson.com/products/${id.value}`)
         .then((res) => product.value = res.data)
+})
+
+const index = computed(() => {
+    return basketStore?.basket.map(val => val.id).indexOf(id.value)
 })
 </script>
